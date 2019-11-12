@@ -1,7 +1,5 @@
 from flask import Flask
 from twilio.rest import Client
-account_sid = 'ACc02a6cd029be8e49f8003dff669ba146'
-auth_token = 'bdee4244d1652feedc48987d5bcc87c9'
 #client is the progarme that talk to the twillio api
 client = Client(account_sid, auth_token)
 #stating flask
