@@ -1,5 +1,11 @@
 from flask import Flask
 from twilio.rest import Client
+import os
+# Your Account SID from twilio.com/console
+account_sid = os.environ["TWILLIO_ACCOUNT_SID"]
+# Your Auth Token from twilio.com/console
+auth_token  = os.environ["TWILLIO_AUTH_TOKEN"]
+
 #client is the progarme that talk to the twillio api
 client = Client(account_sid, auth_token)
 #stating flask
@@ -19,3 +25,4 @@ def hello():
 
 if __name__ == "__main__":
     app.run()
+
