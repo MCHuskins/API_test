@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, render_template
 from twilio.rest import Client
 import os
 # Your Account SID from twilio.com/console
@@ -11,18 +11,26 @@ client = Client(account_sid, auth_token)
 #stating flask
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
+@app.route('/')
+def my_form():
+    return render_template('my-form.html')
+
+@app.route('/', methods=['POST'])
+def my_form_post():
+    text = request.form['text']
     message = client.messages.create(
-                                  body='Guess how I send this -Matthew Huskins',
-                                  from_='+16502036811',
+                                  body= text,
+                                  from_='+17652272641',
                                   media_url=['https://media.tenor.com/images/4653cab601012d45914782bc482a6390/tenor.gif'],
-                                  to='+16506789378'
+                                  to='+17656355625'
                               )
 
     print(message.sid)
-    return("message sent")
+    return "message sent"
 
 if __name__ == "__main__":
     app.run()
+
+
+
 
