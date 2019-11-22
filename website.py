@@ -1,3 +1,9 @@
+#TODO: label the "message input" box.
+#TODO: create a new input field for the target phone number, and label that box too.
+#TODO: (Optional) add a cool image/gif to the page
+
+
+
 from flask import Flask, request, render_template
 from twilio.rest import Client
 import os
