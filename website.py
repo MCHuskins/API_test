@@ -21,14 +21,15 @@ app = Flask(__name__)
 def my_form():
     return render_template('my-form.html')
 
-@app.route('/', methods=['POST'])
-def my_form_post():
+#@app.route('/', methods=['POST'])
+#def my_form_post():
     text = request.form['text']
+    resever = request.form['resever']
     message = client.messages.create(
                                   body= text,
                                   from_='+17652272641',
                                   media_url=['https://media.tenor.com/images/4653cab601012d45914782bc482a6390/tenor.gif'],
-                                  to='+17656355625'
+                                  to= resever
                               )
 
     print(message.sid)
@@ -36,7 +37,3 @@ def my_form_post():
 
 if __name__ == "__main__":
     app.run()
-
-
-
-
