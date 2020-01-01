@@ -1,6 +1,8 @@
 import os
 import argparse
 
+#test
+
 parser = argparse.ArgumentParser(description='recursivley capitals all files in a directory.')
 parser.add_argument("target_directory", default=".")
 parser.add_argument("-l",  action="store_true")
